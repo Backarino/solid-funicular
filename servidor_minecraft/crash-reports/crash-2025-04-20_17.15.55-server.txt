@@ -1,0 +1,132 @@
+---- Minecraft Crash Report ----
+// Shall we play a game?
+
+Time: 2025-04-20 17:15:55
+Description: Exception in server tick loop
+
+java.lang.IllegalStateException: Failed to initialize server
+	at net.minecraft.server.MinecraftServer.m_130011_(MinecraftServer.java:635) ~[server-1.20.1-20230612.114412-srg.jar%23217!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_206580_(MinecraftServer.java:251) ~[server-1.20.1-20230612.114412-srg.jar%23217!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at java.lang.Thread.run(Thread.java:840) ~[?:?] {re:mixin}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Linux (amd64) version 6.8.0-1021-azure
+	Java Version: 17.0.14, Ubuntu
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Ubuntu
+	Memory: 1984568664 bytes (1892 MiB) / 3338665984 bytes (3184 MiB) up to 12884901888 bytes (12288 MiB)
+	CPUs: 4
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD EPYC 7763 64-Core Processor
+	Identifier: AuthenticAMD Family 25 Model 1 Stepping 1
+	Microarchitecture: Zen 3
+	Frequency (GHz): -0.00
+	Number of physical packages: 1
+	Number of physical CPUs: 2
+	Number of logical CPUs: 4
+	Graphics card #0 name: unknown
+	Graphics card #0 vendor: unknown
+	Graphics card #0 VRAM (MB): 0.00
+	Graphics card #0 deviceId: unknown
+	Graphics card #0 versionInfo: unknown
+	Virtual memory max (MB): 7995.02
+	Virtual memory used (MB): 7946.35
+	Swap memory total (MB): 0.00
+	Swap memory used (MB): 0.00
+	JVM Flags: 2 total; -Xms2G -Xmx12G
+	Server Running: true
+	Data Packs: vanilla, mod:forge, mod:taxva, mod:betterskills, mod:xenon, mod:riskofrain_mobs (incompatible), mod:geckolib, mod:realmrpg_demons, mod:jei, mod:visualworkbench, mod:naturalist (incompatible), mod:ants_unleashed, mod:valhelsia_furniture (incompatible), mod:realmrpg_skeletons, mod:epicfight (incompatible), mod:journeymap (incompatible), mod:integrated_api, mod:citadel (incompatible), mod:alexsmobs (incompatible), mod:travelersbackpack, mod:mixinextras (incompatible), mod:mirabilis, mod:hopour (incompatible), mod:grimoireofgaia, mod:iceandfire, mod:orcz, mod:bosses_of_mass_destruction, mod:swampier_swamps (incompatible), mod:morevanillashields, mod:puzzlesaccessapi, mod:cloth_config (incompatible), mod:iter_rpg, mod:zillagersweararmor (incompatible), mod:morevillagers (incompatible), mod:terrablender, mod:ambientsounds, mod:bloodandmadness (incompatible), mod:netherdungeons, mod:taxcp, mod:biomesoplenty (incompatible), mod:endrem (incompatible), mod:justenoughbreeding (incompatible), mod:hoporp (incompatible), mod:creativecore, mod:forbidden_arcanus (incompatible), mod:lionfishapi (incompatible), mod:philipsruins (incompatible), mod:cataclysm (incompatible), mod:curios (incompatible), mod:spartanshields, mod:brutalbosses (incompatible), mod:gravestone, mod:cerbons_api, mod:seadwellers, mod:endreborn, mod:crittersandcompanions (incompatible), mod:spartanweaponry, mod:mvs (incompatible), mod:cupboard (incompatible), mod:puzzleslib, mod:smallships (incompatible), mod:valhelsia_core (incompatible)
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Stable
+	Is Modded: Definitely; Server brand changed to 'forge'
+	Type: Dedicated Server (map_server.txt)
+	ModLauncher: 10.0.9+10.0.9+main.dcd20f30
+	ModLauncher launch target: forgeserver
+	ModLauncher naming: srg
+	ModLauncher services: 
+		mixin-0.8.5.jar mixin PLUGINSERVICE 
+		eventbus-6.0.5.jar eventbus PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.7.jar slf4jfixer PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.7.jar object_holder_definalize PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.7.jar runtime_enum_extender PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.7.jar capability_token_subclass PLUGINSERVICE 
+		accesstransformers-8.0.4.jar accesstransformer PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.7.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-10.0.9.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		lowcodefml@null
+		javafml@null
+	Mod List: 
+		TaxVillageArchitect+M.1.20.1+ForM.1.1.1.jar       |Tax' Village Architect        |taxva                         |1.1.1               |DONE      |Manifest: NOSIGNATURE
+		Better Skills 1.8.1 [1.20.1].jar                  |Better Skills                 |betterskills                  |1.8.1               |DONE      |Manifest: NOSIGNATURE
+		xenon-0.3.19+mc1.20.1.jar                         |Xenon                         |xenon                         |0.3.19+mc1.20.1     |DONE      |Manifest: NOSIGNATURE
+		riskofrain_mobs-1.20.1-1.1.2.jar                  |Risk of Rain Mobs             |riskofrain_mobs               |1.1.2               |DONE      |Manifest: NOSIGNATURE
+		geckolib-forge-1.20.1-4.4.7.jar                   |GeckoLib 4                    |geckolib                      |4.4.7               |DONE      |Manifest: NOSIGNATURE
+		realmrpg_imps_and_demons_0.9.0_forge_1.20.1.jar   |Realm RPG: Imps & Demons      |realmrpg_demons               |0.9.0               |DONE      |Manifest: NOSIGNATURE
+		jei-1.20.1-forge-15.3.0.7.jar                     |Just Enough Items             |jei                           |15.3.0.7            |DONE      |Manifest: NOSIGNATURE
+		VisualWorkbench-v8.0.0-1.20.1-Forge.jar           |Visual Workbench              |visualworkbench               |8.0.0               |DONE      |Manifest: 9a:09:85:98:65:c4:8c:11:c5:49:f6:d6:33:23:39:df:8d:b4:ff:92:84:b8:bd:a5:83:9f:ac:7f:2a:d1:4b:6a
+		naturalist-forge-4.0.3-1.20.1.jar                 |Naturalist                    |naturalist                    |4.0.3               |DONE      |Manifest: NOSIGNATURE
+		ants-1.20.1-forge-ver2.2.jar                      |Ants Unleashed                |ants_unleashed                |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		valhelsia_furniture-forge-1.20.1-1.1.3.jar        |Valhelsia Furniture           |valhelsia_furniture           |1.1.3               |DONE      |Manifest: NOSIGNATURE
+		realmrpg_fallen_adventurers_1.0.3_forge_1.20.1.jar|Realm RPG: Fallen Adventurers |realmrpg_skeletons            |1.0.3               |DONE      |Manifest: NOSIGNATURE
+		EpicFight-20.7.4.jar                              |Epic Fight                    |epicfight                     |20.7.4              |DONE      |Manifest: NOSIGNATURE
+		journeymap-1.20.1-5.10.0-forge.jar                |Journeymap                    |journeymap                    |5.10.0              |DONE      |Manifest: NOSIGNATURE
+		integrated_api-1.5.1+1.20.1-forge.jar             |Integrated API                |integrated_api                |1.5.1+1.20.1-forge  |DONE      |Manifest: NOSIGNATURE
+		citadel-2.5.4-1.20.1.jar                          |Citadel                       |citadel                       |2.5.4               |DONE      |Manifest: NOSIGNATURE
+		alexsmobs-1.22.7.jar                              |Alex's Mobs                   |alexsmobs                     |1.22.7              |DONE      |Manifest: NOSIGNATURE
+		travelersbackpack-forge-1.20.1-9.1.14.jar         |Traveler's Backpack           |travelersbackpack             |9.1.14              |DONE      |Manifest: NOSIGNATURE
+		mixinextras-forge-0.3.5.jar                       |MixinExtras                   |mixinextras                   |0.3.5               |DONE      |Manifest: NOSIGNATURE
+		mirabilis-1.1.1-1.20.1.jar                        |Mirabilis                     |mirabilis                     |1.1.1               |DONE      |Manifest: NOSIGNATURE
+		HopoBetterUnderwaterRuins-[1.20.2-1.20.4]-1.1.5.ja|HopoBetterUnderwaterRuins     |hopour                        |1.1.4               |DONE      |Manifest: NOSIGNATURE
+		GrimoireOfGaia4-1.20.1-4.0.0-alpha.10.jar         |Grimoire of Gaia 4            |grimoireofgaia                |4.0.0-alpha.10      |DONE      |Manifest: NOSIGNATURE
+		iceandfire-2.1.13-1.20.1-beta-4.jar               |Ice and Fire                  |iceandfire                    |2.1.13-1.20.1-beta-4|DONE      |Manifest: NOSIGNATURE
+		Orcz_0.87_1.20.1.jar                              |Orcz                          |orcz                          |0.82                |DONE      |Manifest: NOSIGNATURE
+		BOMD-Forge-1.20.1-1.1.1.jar                       |Bosses of Mass Destruction    |bosses_of_mass_destruction    |1.1.1               |DONE      |Manifest: NOSIGNATURE
+		swampier_swamps-1.20-4.0.0.jar                    |Swampier Swamps               |swampier_swamps               |1.20-4.0.0          |DONE      |Manifest: NOSIGNATURE
+		morevanillashields-1.1.0-1.20.1.jar               |More Vanilla Shields          |morevanillashields            |1.1.0-1.20.1        |DONE      |Manifest: NOSIGNATURE
+		puzzlesaccessapi-forge-8.0.7.jar                  |Puzzles Access Api            |puzzlesaccessapi              |8.0.7               |DONE      |Manifest: 9a:09:85:98:65:c4:8c:11:c5:49:f6:d6:33:23:39:df:8d:b4:ff:92:84:b8:bd:a5:83:9f:ac:7f:2a:d1:4b:6a
+		cloth-config-11.1.118-forge.jar                   |Cloth Config v10 API          |cloth_config                  |11.1.118            |DONE      |Manifest: NOSIGNATURE
+		forge-1.20.1-47.3.7-universal.jar                 |Forge                         |forge                         |47.3.7              |DONE      |Manifest: 84:ce:76:e8:45:35:e4:0e:63:86:df:47:59:80:0f:67:6c:c1:5f:6e:5f:4d:b3:54:47:1a:9f:7f:ed:5e:f2:90
+		iter_rpg-0.7.0b-forge-1.20.1.jar                  |Iter RPG                      |iter_rpg                      |0.7.0               |DONE      |Manifest: NOSIGNATURE
+		illagersweararmor-1.20.1-1.3.4.jar                |Illagers Wear Armor           |zillagersweararmor            |1.20.1-1.3.4        |DONE      |Manifest: NOSIGNATURE
+		server-1.20.1-20230612.114412-srg.jar             |Minecraft                     |minecraft                     |1.20.1              |DONE      |Manifest: NOSIGNATURE
+		morevillagers-forge-1.20.1-5.0.0.jar              |More Villagers                |morevillagers                 |5.0.0               |DONE      |Manifest: NOSIGNATURE
+		TerraBlender-forge-1.20.1-3.0.1.7.jar             |TerraBlender                  |terrablender                  |3.0.1.7             |DONE      |Manifest: NOSIGNATURE
+		AmbientSounds_FORGE_v6.0.3_mc1.20.1.jar           |AmbientSounds                 |ambientsounds                 |6.0.3               |DONE      |Manifest: NOSIGNATURE
+		BloodAndMadness-Forge1.20.1-v2.1.5.2.jar          |Blood And Madness             |bloodandmadness               |2.0                 |DONE      |Manifest: NOSIGNATURE
+		netherdungeons-1.1.0-snapshot3a.jar               |Nether Dungeons               |netherdungeons                |1.1.0-snapshot3a    |DONE      |Manifest: NOSIGNATURE
+		TaxCastlePillager+M.1.20.1+ForM.1.0.1.jar         |Tax' Castle Pillager          |taxcp                         |1.0.1               |DONE      |Manifest: NOSIGNATURE
+		BiomesOPlenty-1.20.1-18.0.0.592.jar               |Biomes O' Plenty              |biomesoplenty                 |18.0.0.592          |DONE      |Manifest: NOSIGNATURE
+		endrem_forge-5.2.3-R-1.20.X.jar                   |End Remastered                |endrem                        |5.2.3-R-1.20.1      |DONE      |Manifest: NOSIGNATURE
+		justenoughbreeding-forge-1.20.x-1.2.1.jar         |Just Enough Breeding          |justenoughbreeding            |1.2.1               |DONE      |Manifest: NOSIGNATURE
+		HopoBetterRuinedPortals-[1.20-1.20.2]-1.3.7.jar   |HopoBetterRuinedPortals       |hoporp                        |1.3.7               |DONE      |Manifest: NOSIGNATURE
+		CreativeCore_FORGE_v2.11.31_mc1.20.1.jar          |CreativeCore                  |creativecore                  |2.11.31             |DONE      |Manifest: NOSIGNATURE
+		forbidden_arcanus-1.20.1-2.2.6.jar                |Forbidden & Arcanus           |forbidden_arcanus             |1.20.1-2.2.6        |DONE      |Manifest: NOSIGNATURE
+		lionfishapi-1.9.jar                               |LionfishAPI                   |lionfishapi                   |1.9                 |DONE      |Manifest: NOSIGNATURE
+		Philips-Ruins1.20.1-4.2.jar                       |Philips Ruins                 |philipsruins                  |4.1                 |DONE      |Manifest: NOSIGNATURE
+		L_Enders_Cataclysm-1.99.6-1.20.1.jar              |Cataclysm Mod                 |cataclysm                     |1.99.5              |DONE      |Manifest: NOSIGNATURE
+		curios-forge-5.9.1+1.20.1.jar                     |Curios API                    |curios                        |5.9.1+1.20.1        |DONE      |Manifest: NOSIGNATURE
+		SpartanShields-1.20.1-forge-3.1.1.jar             |Spartan Shields               |spartanshields                |3.1.1               |DONE      |Manifest: NOSIGNATURE
+		brutalbosses-1.20.1-7.0.jar                       |brutalbosses mod              |brutalbosses                  |1.20.1-7.0          |DONE      |Manifest: NOSIGNATURE
+		gravestone-forge-1.20.1-1.0.16.jar                |Gravestone Mod                |gravestone                    |1.20.1-1.0.16       |DONE      |Manifest: NOSIGNATURE
+		CerbonsApi-Forge-1.20.1-1.0.0.jar                 |CerbonsApi                    |cerbons_api                   |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		realmrpg_seadwellers_2.9.9_forge_1.20.1.jar       |Realm RPG: Sea Dwellers       |seadwellers                   |2.9.9               |DONE      |Manifest: NOSIGNATURE
+		endorium-forge-1.1.3.jar                          |Endorium                      |endreborn                     |1.1.3               |DONE      |Manifest: NOSIGNATURE
+		crittersandcompanions-1.20.1-2.1.6.jar            |Critters and Companions       |crittersandcompanions         |1.20.1-2.1.6        |DONE      |Manifest: NOSIGNATURE
+		SpartanWeaponry-1.20.1-forge-3.1.0-beta-1-all.jar |Spartan Weaponry              |spartanweaponry               |3.1.0-beta-1        |DONE      |Manifest: NOSIGNATURE
+		mvs-4.1.2-1.20-forge.jar                          |Moog's Voyager Structures     |mvs                           |4.1.2-1.20-forge    |DONE      |Manifest: NOSIGNATURE
+		cupboard-1.20.1-2.7.jar                           |Cupboard utilities            |cupboard                      |1.20.1-2.7          |DONE      |Manifest: NOSIGNATURE
+		PuzzlesLib-v8.1.21-1.20.1-Forge.jar               |Puzzles Lib                   |puzzleslib                    |8.1.21              |DONE      |Manifest: 9a:09:85:98:65:c4:8c:11:c5:49:f6:d6:33:23:39:df:8d:b4:ff:92:84:b8:bd:a5:83:9f:ac:7f:2a:d1:4b:6a
+		smallships-forge-1.20.1-2.0.0-b1.3.1.jar          |Small Ships                   |smallships                    |2.0.0-b1.3.1        |DONE      |Manifest: NOSIGNATURE
+		valhelsia_core-forge-1.20.1-1.1.2.jar             |Valhelsia Core                |valhelsia_core                |1.1.2               |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: 62ead266-62cc-49a1-adae-ec6bb002140b
+	FML: 47.3
+	Forge: net.minecraftforge:47.3.7
